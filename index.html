@@ -1,38 +1,5 @@
 <html> 
 <head> 
-	<script> 
-		
-		function dis(val) 
-		{ 
-			document.getElementById("result").value+=val 
-		} 
-		
-		
-		function backspace() 
-		{
-             var value = document.getElementById("result").value;
-              document.getElementById("result").value = value.substr(0, value.length - 1);
-        }
-	/*	function percentage()
-		{
-			let x=document.getElementById("result").value
-		    let=y=eval(x)
-			document.getElementById("result").value=y/100
-		}
-		*/
-		
-		function solve() 
-		{ 
-			let x = document.getElementById("result").value 
-			let y = eval(x) 
-			document.getElementById("result").value = y 
-		} 
-		
-		function clr() 
-		{ 
-			document.getElementById("result").value = "" 
-		} 
-	</script> 
 	<style> 
     body{
         background-image: url(https://2s7gjr373w3x22jf92z99mgm5w-wpengine.netdna-ssl.com/wp-content/uploads/2020/02/coronavirus-scaled.jpg);
@@ -79,43 +46,69 @@
 	<table > 
        
 		<tr> 
-			<td colspan="6"><input type="text" id="result"/></td> 
+			<td colspan="6"><input type="text" id="sollution"/></td> 
             
            
 			
 		</tr> 
 		<tr> 
 			
-			<td><input type="button" value="7" onclick="dis('7')"/> </td> 
-			<td><input type="button" value="8" onclick="dis('8')"/> </td> 
-			<td><input type="button" value="9" onclick="dis('9')"/> </td> 
+			<td><input type="button" value="1" onclick="calculate('1')"/> </td> 
+			<td><input type="button" value="2" onclick="calculate('2')"/> </td> 
+            <td><input type="button" value="3" onclick="calculate('3')"/> </td> 
+			 <td><input type="button" value="del" onclick="backspace()"/> </td>
+            <td><input type="button"  value="C" onclick="clr()"/> </td> 
            
-          <td><input type="button"  value="C" onclick="clr()"/> </td> 
-            <td><input type="button" value="del" onclick="backspace()"/> </td>
 		</tr> 
 		<tr> 
-			<td><input type="button" value="4" onclick="dis('4')"/> </td> 
-			<td><input type="button" value="5" onclick="dis('5')"/> </td> 
-			<td><input type="button" value="6" onclick="dis('6')"/> </td> 
-            <td><input type="button" value="-" onclick="dis('-')"/> </td> 
-            <td><input type="button" value="X" onclick="dis('*')"/> </td>
+			<td><input type="button" value="4" onclick="calculate('4')"/> </td> 
+			<td><input type="button" value="5" onclick="calculate('5')"/> </td> 
+			<td><input type="button" value="6" onclick="calculate('6')"/> </td> 
+            <td><input type="button" value="-" onclick="calculate('-')"/> </td> 
+			<td><input type="button" value="/" onclick="calculate('/')"/> </td>
+            
 		</tr> 
 		<tr> 
-			<td><input type="button" value="1" onclick="dis('1')"/> </td> 
-			<td><input type="button" value="2" onclick="dis('2')"/> </td> 
-            <td><input type="button" value="3" onclick="dis('3')"/> </td> 
-            <td><input type="button" value="/" onclick="dis('/')"/> </td>
-            <td rowspan="2"><input type="button"  style="height:145" value="+" onclick="dis('+')"/> </td> 
+			<td><input type="button" value="7" onclick="calculate('7')"/> </td> 
+			<td><input type="button" value="8" onclick="calculate('8')"/> </td> 
+			<td><input type="button" value="9" onclick="calculate('9')"/> </td> 
+			<td><input type="button" value="X" onclick="calculate('*')"/> </td>
+            
+            <td rowspan="2"><input type="button"  style="height:145" value="+" onclick="calculate('+')"/> </td> 
            
 		</tr> 
 		<tr> 
 			 
-            <td colspan="2" ><input type="button" value="0" style="width:163 " onclick="dis('0')"/> </td> 
-            <td><input type="button" value="." onclick="dis('.')"/> </td> 
+            <td colspan="2" ><input type="button" value="0" style="width:163 " onclick="calculate('0')"/> </td> 
+            <td><input type="button" value="." onclick="calculate('.')"/> </td> 
 			<td><input type="button" value="=" onclick="solve()"/> </td> 
          
          </tr> 
       </div>
 	</table> 
+		<script> 
+		function calculate(val) 
+		{ 
+			document.getElementById("sollution").value+=val 
+		} 
+		
+		
+		function backspace() 
+		{
+             var value = document.getElementById("sollution").value;
+              document.getElementById("sollution").value = value.substr(0, value.length - 1);
+        }
+		function solve() 
+		{ 
+			let a = document.getElementById("sollution").value ;
+			let b = eval(a) ;
+			document.getElementById("sollution").value = b ;
+		} 
+		
+		function clr() 
+		{ 
+			document.getElementById("sollution").value = "" ;
+		} 
+	</script> 
 </body> 
 </html>
